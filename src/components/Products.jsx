@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import Product from "./Product";
+import styled from "styled-components";
 import { popularProducts } from "../data"
 
 const Container = styled.div`

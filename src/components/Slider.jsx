@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import styled from "styled-components"
 import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
+import styled from "styled-components"
 import { sliderItems } from "../data";
+import { useState } from 'react'
 
 const Container = styled.div`
     width: 100%;

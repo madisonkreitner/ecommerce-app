@@ -1,8 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import SearchIcon from '@mui/icons-material/Search';
 import Badge from '@mui/material/Badge';
+import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import styled from 'styled-components'
 
 const Container = styled.div`
     height:60px;
