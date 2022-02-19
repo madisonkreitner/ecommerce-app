@@ -4,6 +4,9 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { Add, Remove } from "@mui/icons-material";
 import { mobile } from "../responsive";
+import StripeCheckout from 'react-stripe-checkout';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Container = styled.div``;
 
@@ -153,6 +156,27 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+    const [stripeToken, setStripeToken]= useState(null);
+
+    const onToken = (token) => {
+        setStripeToken(token);
+    }
+
+    useEffect(() => {
+        const makeRequest = async () => {
+            try {
+                const res = await axios.post("http://localhost:5000/api/checkout/payment", {
+                    tokenId: stripeToken.id,
+                    amount: 8000,
+                });
+                console.log(res.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        stripeToken && makeRequest();
+    }, [stripeToken]);
+
     return (
         <Container>
             <Navbar />
@@ -227,7 +251,18 @@ const Cart = () => {
                             <SummaryItemText>Total</SummaryItemText>
                             <SummaryItemPrice>$ 80</SummaryItemPrice>
                         </SummaryItem>
-                        <Button>CHECKOUT NOW</Button>
+                        <StripeCheckout 
+                            name="E-commerce App" 
+                            img="https://www.mintformations.co.uk/blog/wp-content/uploads/2020/05/shutterstock_583717939.jpg"
+                            billingAddress
+                            shippingAddress
+                            description=" Your total is $80"
+                            amount={8000}
+                            token={onToken}
+                            stripeKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY_TEST}
+                        >
+                            <Button>CHECKOUT NOW</Button>
+                        </StripeCheckout>
                     </Summary>
                 </Bottom>
             </Wrapper>
