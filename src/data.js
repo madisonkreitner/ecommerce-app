@@ -26,17 +26,20 @@ export const categories = [
     {
         id: 1,
         title: "Whiskey",
-        img: "https://www.acouplecooks.com/wp-content/uploads/2021/08/Types-of-Whiskey-005.jpg"
+        img: "https://www.acouplecooks.com/wp-content/uploads/2021/08/Types-of-Whiskey-005.jpg",
+        category: "women",
     },
     {
         id: 2,
         title: "Bourbon",
-        img: "https://imageio.forbes.com/specials-images/imageserve/607c80f46b792f912496a8cd/Best-Bourbons-for-Kentucky-Derby-2021/960x0.jpg?fit=bounds&format=jpg&width=960"
+        img: "https://imageio.forbes.com/specials-images/imageserve/607c80f46b792f912496a8cd/Best-Bourbons-for-Kentucky-Derby-2021/960x0.jpg?fit=bounds&format=jpg&width=960",
+        category: "coats",
     },
     {
         id: 2,
         title: "Scotch",
-        img: "https://manofmany.com/wp-content/uploads/2020/01/Best-Scotch-Whisky-Brands.jpg"
+        img: "https://manofmany.com/wp-content/uploads/2020/01/Best-Scotch-Whisky-Brands.jpg",
+        category: "jeans",
     },
     
 ];
